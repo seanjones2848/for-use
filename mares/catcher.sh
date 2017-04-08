@@ -1,0 +1,2 @@
+./manger
+kill -ff $!
