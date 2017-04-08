@@ -1,2 +1,3 @@
-./manger
-kill -ff $!
+./mangercentos
+PID=$!
+kill -ff $PID
