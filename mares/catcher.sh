@@ -1,3 +1,3 @@
 ./mangercentos
 PID=$!
-kill -ff $PID
+kill -s 18 $PID
