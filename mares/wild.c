@@ -39,7 +39,7 @@ void	xanthos()
 {
 	while (1)
 	{
-		write(1, "neigh, I'm a horse named xanthos\n", 32);
+		write(1, "neigh, I'm a horse named xanthos\n", 33);
 	}
 }
 
