@@ -6,8 +6,11 @@ SRC_PATH = ./src
 INC_PATH = ./headers
 OBJ_PATH = ./obj
 
-SRC_NAME = ft_db.c
-INC_NAME = ft_db.h
+SRC_NAME =	ft_db.c\
+		db_commands.c\
+		db_help.c\
+		init_db.c\
+INC_NAME = 	ft_db.h
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
