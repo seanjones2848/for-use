@@ -34,8 +34,5 @@ void		delete_ent(t_db *db, char *key);
 void		delete_all(t_db *db);
 void		db_2file(t_db *db);
 void		all_puts(t_ent *ent, FILE *fp);
-void		*db_memalloc(size_t size);
-size_t		db_numlen(intmax_t nb, int bse);
-char		*db_itoa(intmax_t nbg);
-
+int			ent_len(t_db *db);
 #endif

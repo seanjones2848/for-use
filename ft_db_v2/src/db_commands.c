@@ -16,8 +16,8 @@ void	print_ent(t_db *db, char *key)
 {
 	t_ent	*t;
 
-	t = db->ents;
-	while (strcmp(t->key, key) != 0)
+	t = DE;
+	while (t && strcmp(t->key, key) != 0)
 		t = t->next;
 	if (t)
 		printf("For key: %s\nData is: %s\n", t->key, t->data);

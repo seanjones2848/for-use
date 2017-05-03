@@ -28,28 +28,32 @@ void	check_query(int ac, char **av, t_db *db)
 	ft_putnbr(ac);
 	while (i < ac)
 	{
-		if (strcmp(av[i++], "-help") == 0)
+		if (ft_strcmp(av[i++], "-help") == 0)
 			print_help();
-		else if (strcmp(av[i], "-print_all") == 0 && i++)
+		else if (ft_strcmp(av[i], "-print_all") == 0 && i++)
 			print_all(db);
-		else if (strcmp(av[i], "-print") == 0 && i++)
-			print_ent(db, av[i++]);
-		else if (strcmp(av[i], "-add") == 0 && i++)
+		else if (ft_strcmp(av[i], "-print") == 0 && i++)
+		{
+			ft_putendl("I'm trying to print");
+			print_ent(db, av[i]);
+			i++;
+		}
+		else if (ft_strcmp(av[i], "-add") == 0 && i++)
 		{
 			add_ent(db, av[i], av[i + 1]);
 			i += 2;
 		}
-		else if (strcmp(av[i], "-edit") == 0 && i++)
+		else if (ft_strcmp(av[i], "-edit") == 0 && i++)
 		{
 			edit_ent(db, av[i], av[i + 1]);
 			i += 2;
 		}
-		else if (strcmp(av[i], "-delete") == 0 && i++)
+		else if (ft_strcmp(av[i], "-delete") == 0 && i++)
 			delete_ent(db, av[i++]);
-		else if (strcmp(av[i], "-delete_all") == 0 && i++)
+		else if (ft_strcmp(av[i], "-delete_all") == 0 && i++)
 			delete_all(db);
 		else
-			print_err();
+			break; //print_err();
 	}
 }
 

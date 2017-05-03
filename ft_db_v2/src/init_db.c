@@ -3,8 +3,10 @@
 t_db	*init_db(FILE *fp)
 {
 	t_db	*db;
-	char	*tmpk = 0;
-	char	*tmpd = 0;
+	char	*tmp;
+	char	*tmpk;
+	char	*tmpd;
+	int		k = 1;
 
 	if (!(db = ft_memalloc(sizeof(t_db))))
 		return (NULL);
@@ -13,10 +15,18 @@ t_db	*init_db(FILE *fp)
 	DE = init_ent(0,0);
 	if (fp)
 	{
-		fp = fopen("derpbase.db", "r+");// maybe not needed open	
-		while(fscanf(fp, "%s %s", tmpk, tmpd) > 0) //take out length
-			add_ent(db, tmpk, tmpd);
-		//close file maybe
+		while (get_next_line(fileno(fp), &tmp) > 0)
+		{
+			ft_putnbr(k);
+			if (k == 1 && k--)
+				tmpk = ft_strdup(tmp);
+			else
+			{
+				tmpd = ft_strdup(tmp);
+				add_ent(db, tmpk, tmpd);
+				k++;
+			}
+		}
 	}
 	return (db);
 }

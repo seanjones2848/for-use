@@ -1,4 +1,4 @@
-.PHONY: all re clean fclean
+ PHONY: all re clean fclean
 
 NAME = ft_db
 
@@ -9,7 +9,7 @@ SRC_NAME =	ft_db.c\
 			db_commands.c\
 			init_db.c\
 			db_2file.c\
-			db_itoa.c
+			db_help.c
 			
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = 	ft_db.h
